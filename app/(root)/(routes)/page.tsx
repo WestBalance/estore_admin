@@ -15,13 +15,7 @@ useEffect(()=>{
 
 },[isOpen,onOpen]);
 
-  return (
-    
-<div className="p-4">
-Root Page
-</div> 
-
-);
+  return null;
 }
 
 export default SetupPage;
