@@ -11,6 +11,7 @@ export default async function DashboardLayout({
     params:{storeId: string}
 }) {
     const session = await auth(); // await здесь нужен
+     const { storeId } = await params;
     const userId = session.userId; // берём userId из объекта
 
     if(!userId){
@@ -19,7 +20,7 @@ export default async function DashboardLayout({
     const resolvedParams = await params;
     const store = await prismadb.store.findFirst({
         where: {
-            id: params.storeId,
+            id: storeId,
             userId: userId 
         }
     });
